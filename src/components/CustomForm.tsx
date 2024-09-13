@@ -73,7 +73,7 @@ export function CustomForm({ subscribe, status, message }: CustomFormProps) {
             type="submit"
             disabled={isDisabled || isSubscribed}
             className={cn(
-              'w-full min-h-11 bg-blue-500 flex items-center justify-center mt-5 rounded-md transition-all hover:bg-blue-600 active:bg-blue-400 disabled:bg-gray-400',
+              'w-full min-h-11 bg-blue-500 flex items-center justify-center mt-7 rounded-md transition-all hover:bg-blue-600 active:bg-blue-400 disabled:bg-gray-400',
               (status === 'success' || isSubscribed) && '!bg-green-500'
             )}
           >
