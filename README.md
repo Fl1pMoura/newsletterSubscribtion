@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# React Mailchimp Integration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React application that uses the Mailchimp API to add emails to a mailchimp contacts list.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
 
-## Expanding the ESLint configuration
+- **React**: Library for building the user interface.
+- **Vite**: Build and development tool.
+- **Tailwind CSS**: Styling framework.
+- **TypeScript**: Programming language for static typing.
+- **Mailchimp API**: For adding emails to a contact list.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Dependencies
 
-- Configure the top-level `parserOptions` property like this:
+- `react`: Core React library.
+- `react-dom`: React DOM integration.
+- `react-hot-toast`: Library for displaying toast notifications.
+- `react-mailchimp-subscribe`: Library for integrating Mailchimp subscription forms.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Dev Dependencies
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- `@biomejs/biome`: Linting and formatting tool.
+- `tailwindcss`: Utility-first CSS framework.
+- `typescript`: TypeScript language.
+- `vite`: Build and development tool.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+# Live Demo
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+You can view the live version of the application here: [Newsletter Subscription](https://newsletter-subscribtion.vercel.app/).
+
+# Contributing
+
+Feel free to contribute improvements, open issues, or submit pull requests.
