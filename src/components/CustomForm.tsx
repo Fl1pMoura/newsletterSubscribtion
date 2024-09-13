@@ -1,6 +1,6 @@
 import type React from 'react'
 import { Loader } from './Loader'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { cn } from '../app/utils/cn'
 import { CheckCheck } from 'lucide-react'
@@ -13,8 +13,14 @@ interface CustomFormProps {
 
 export function CustomForm({ subscribe, status, message }: CustomFormProps) {
   const isDisabled = status === 'sending' || status === 'success'
+  const [isSubscribed, setIsSubscribed] = useState(false)
+  console.log(isSubscribed)
   console.log(status)
   useEffect(() => {
+    if (status) {
+      localStorage.setItem('subscribeStatus', status)
+    }
+
     if (status === 'error') {
       toast.error(message || 'An error occurred while subscribing.')
     }
@@ -23,6 +29,14 @@ export function CustomForm({ subscribe, status, message }: CustomFormProps) {
       toast.success('Successfully subscribed!')
     }
   }, [status, message])
+
+  useEffect(() => {
+    const savedSubscription = localStorage.getItem('subscribeStatus')
+    if (savedSubscription === 'success') {
+      setIsSubscribed(true)
+      toast.success('You´re already subscribed')
+    }
+  }, [])
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -57,17 +71,21 @@ export function CustomForm({ subscribe, status, message }: CustomFormProps) {
           />
           <button
             type="submit"
-            disabled={isDisabled}
+            disabled={isDisabled || isSubscribed}
             className={cn(
               'w-full min-h-11 bg-blue-500 flex items-center justify-center mt-5 rounded-md transition-all hover:bg-blue-600 active:bg-blue-400 disabled:bg-gray-400',
-              status === 'success' && '!bg-green-500'
+              status === 'success' || (isSubscribed && '!bg-green-500')
             )}
           >
             {status === 'sending' ? (
               <Loader size={26} />
             ) : (
               <b className="text-white text-xl font-semibold">
-                {status === 'success' ? <CheckCheck /> : 'Subscribe'}
+                {status === 'success' || isSubscribed ? (
+                  <CheckCheck />
+                ) : (
+                  'Subscribe'
+                )}
               </b>
             )}
           </button>
