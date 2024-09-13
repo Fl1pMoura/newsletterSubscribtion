@@ -27,9 +27,9 @@ This is a React application that uses the Mailchimp API to add emails to a mailc
 
 # Live Demo
 
-
-You can view the live version of the application here: [Newsletter Subscription](https://newsletter-subscribtion.vercel.app/).
+You can view the live version of the application here: [Newsletter Subscription](https://newsletter-subscribtion.vercel.app/).]
 
 # Contributing
 
-Feel free to contribute improvements, open issues, or submit pull requests.
+Feel free to contribute improvements, open issues, or submit pull requests.![Uploading image.png…]()
+
