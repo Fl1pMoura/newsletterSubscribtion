@@ -49,15 +49,15 @@ export function CustomForm({ subscribe, status, message }: CustomFormProps) {
     <>
       <section className="w-full h-full flex flex-col items-center justify-center max-w-3xl mx-auto px-5 py-12">
         <form
-          className="bg-white px-10 py-8 rounded-2xl max-w-2xl w-full mx-auto shadow-md"
+          className="bg-white py-5 px-5 sm:px-10 sm:py-8 rounded-2xl max-w-2xl w-full mx-auto shadow-md"
           onSubmit={handleSubmit}
         >
-          <h2 className="text-3xl tracking-tight font-bold text-center mb-3">
+          <h2 className="text-2xl sm:text-3xl tracking-tight font-bold text-center mb-3">
             Subscribe to Our Newsletter!
           </h2>
           <label
             htmlFor="email"
-            className="block mb-2 text-lg w-full font-medium"
+            className="block mb-2 text-base sm:text-lg w-full font-medium"
           >
             E-mail
           </label>
@@ -67,13 +67,13 @@ export function CustomForm({ subscribe, status, message }: CustomFormProps) {
             id="email"
             placeholder="johndoe@email.com"
             required
-            className="w-full outline-none px-4 border border-transparent transition-all bg-slate-200 min-h-10 hover:bg-slate-300 focus:border-slate-400"
+            className="w-full outline-none px-2 sm:px-4 border border-transparent transition-all bg-slate-200 min-h-10 hover:bg-slate-300 focus:border-slate-400"
           />
           <button
             type="submit"
             disabled={isDisabled || isSubscribed}
             className={cn(
-              'w-full min-h-11 bg-blue-500 flex items-center justify-center mt-7 rounded-md transition-all hover:bg-blue-600 active:bg-blue-400 disabled:bg-gray-400',
+              'w-full min-h-11 bg-blue-500 flex items-center justify-center mt-4 sm:mt-7 rounded-md transition-all hover:bg-blue-600 active:bg-blue-400 disabled:bg-gray-400',
               (status === 'success' || isSubscribed) && '!bg-green-500'
             )}
           >
